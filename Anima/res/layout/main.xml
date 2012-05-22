@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2011 Miguel Ángel López Vicente 
+   
+     This program is free software: you can redistribute it and/or modify
+     it under the terms of the GNU General Public License as published by
+     the Free Software Foundation, either version 3 of the License, or
+     (at your option) any later version.
+   
+     This program is distributed in the hope that it will be useful,
+     but WITHOUT ANY WARRANTY; without even the implied warranty of
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+     GNU General Public License for more details.
+   
+     You should have received a copy of the GNU General Public License
+     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/fondo"
+    >
+   
+    <TextView 
+        android:layout_width="fill_parent"
+        android:layout_height="0px"
+        android:layout_margin="20dp"
+        style="@android:style/TextAppearance.Large"
+        android:id="@+id/resultado"
+        android:gravity="center_horizontal"
+        android:layout_weight="2"
+        android:padding="10dp"
+        />
+    
+    
+    <!-- Ataque -->
+    <LinearLayout 
+       android:layout_width="fill_parent"
+       android:layout_height="0px"
+       android:layout_weight="3"
+       android:baselineAligned="false"
+       android:orientation="vertical">
+       
+       <LinearLayout
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal">
+           
+           <TextView
+               android:text="@string/ataque"
+               android:layout_width="0px"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"  
+               style="@android:style/TextAppearance.Large"/>
+           
+           <TextView 
+               android:id="@+ataque/total" 
+               android:layout_width="0px"
+               android:layout_height="wrap_content"
+               android:layout_weight="2"
+               style="@android:style/TextAppearance.Large" />
+           
+           
+       </LinearLayout>
+        
+       <LinearLayout
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical">
+           
+           <LinearLayout 
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               android:layout_weight="1">
+               
+	            <TextView 
+	               android:text="@string/tirada"
+	               android:layout_width="0px"
+	               android:layout_height="wrap_content"
+	               android:layout_weight="1"
+	               />
+	            
+	            <TextView 
+	               android:text="@string/ataque"
+	               android:layout_width="0px"
+	               android:layout_height="wrap_content"
+	               android:layout_weight="2"
+	               />	            
+            
+	           <TextView 
+	               android:text="@string/danio"
+	               android:layout_width="0px"
+	               android:layout_height="wrap_content"
+	               android:layout_weight="1"
+	               />	   
+               
+           </LinearLayout>
+           
+           
+	       <LinearLayout 
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               android:layout_weight="1">
+	       
+	           	<cc.utilidades.EditTextEval 
+	               android:layout_width="0px"
+	               android:layout_height="wrap_content"
+	               android:layout_weight="1"
+	               android:id="@+ataque/tirada"
+	               />
+	            
+	            <cc.utilidades.EditTextEval 
+	               android:layout_width="0px"
+	               android:layout_height="wrap_content"
+	               android:layout_weight="2"
+	               android:id="@+ataque/ataque"
+	               />	            
+            
+	           <cc.utilidades.EditTextEval
+	               android:layout_width="0px"
+	               android:layout_height="wrap_content"
+	               android:layout_weight="1"
+	               android:id="@+ataque/danio"
+	               />	   
+                      
+
+           
+        	 </LinearLayout>  
+       </LinearLayout> 
+       
+       <LinearLayout 
+           android:orientation="horizontal"
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content">
+	       
+           <cc.utilidades.DialogMultiChoiceButton 
+          		android:layout_width="0px"
+          		android:layout_weight="3"
+          		android:id="@+ataque/modificadores"
+          		android:layout_height="wrap_content"
+           		android:text="@string/modificadores" 
+           		android:entries="@array/modificadoresAtaque"
+           		android:entryValues="@array/ataqueValores"
+           		android:title="Modificadores de Ataque"
+           		/>
+           
+         	<ImageButton 
+	             android:layout_width="0px"
+	             android:layout_weight="1"
+	             android:layout_height="fill_parent"
+	             android:id="@+ataque/lanzar"
+	             android:src="@drawable/roll"
+	             android:onClick="lanzar"
+	              />
+      
+       </LinearLayout>
+       
+    </LinearLayout>
+    
+    <!-- Defensa -->
+    <LinearLayout 
+       android:layout_width="fill_parent"
+       android:layout_height="0px"
+       android:layout_weight="4"
+       android:orientation="vertical">
+       
+       <LinearLayout
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal">
+           
+           <TextView
+               android:text="@string/defensa"
+               android:layout_width="0px"
+               android:layout_height="fill_parent"
+               android:layout_weight="1"
+               style="@android:style/TextAppearance.Large"  />
+           
+           <TextView 
+               android:id="@+defensa/total" 
+               android:layout_width="0px"
+               android:layout_height="fill_parent"
+               android:layout_weight="2"
+               style="@android:style/TextAppearance.Large" />
+           
+           
+       </LinearLayout>
+        
+       <LinearLayout
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical">
+           
+           <LinearLayout 
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               android:layout_weight="1">
+               
+	            <TextView 
+	               android:text="@string/tirada"
+	               android:layout_width="0px"
+	               android:layout_height="wrap_content"
+	               android:layout_weight="1"
+	               />
+	            
+	            <TextView 
+	               android:text="@string/defensa"
+	               android:layout_width="0px"
+	               android:layout_height="wrap_content"
+	               android:layout_weight="2"
+	               />	            
+            
+	           <TextView 
+	               android:text="@string/ta"
+	               android:layout_width="0px"
+	               android:layout_height="wrap_content"
+	               android:layout_weight="1"
+	               />	   
+               
+           </LinearLayout>
+           
+           
+	       <LinearLayout 
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal">
+	       
+	           	<cc.utilidades.EditTextEval
+	               android:layout_width="0px"
+	               android:layout_height="wrap_content"
+	               android:layout_weight="1"
+	               android:id="@+defensa/tirada"
+	               />
+	            
+	            <cc.utilidades.EditTextEval
+	               android:layout_width="0px"
+	               android:layout_height="wrap_content"
+	               android:layout_weight="2"
+	               android:id="@+defensa/defensa"
+	               />	            
+              
+                      
+	           <Spinner 
+	               android:layout_width="0px"
+	               android:layout_height="wrap_content"
+	               android:layout_weight="1"
+	               android:id="@+defensa/ta"
+	               android:entries="@array/ta"
+	               android:background="@android:drawable/btn_default"
+	               android:prompt="@string/ta"
+	               />	   
+                     
+           
+        	 </LinearLayout>  
+           
+           
+       </LinearLayout>  
+       
+       <LinearLayout 
+           android:orientation="horizontal"
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content">
+	       
+			<cc.utilidades.DialogMultiChoiceButton 
+          		android:layout_width="0px"
+          		android:layout_weight="3"
+          		android:id="@+defensa/modificadores"
+          		android:layout_height="wrap_content"
+           		android:text="@string/modificadores" 
+           		android:entries="@array/modificadoresDefensa"
+           		android:entryValues="@array/defensaValores"
+           		android:title="@string/modificadoresDefensa"
+           		/>
+           
+         	<ImageButton 
+	             android:layout_width="0px"
+	             android:layout_weight="1"
+	             android:layout_height="fill_parent"
+	             android:src="@drawable/roll"
+	             android:id="@+defensa/lanzar"
+	             android:onClick="lanzar"
+	              />
+      
+       </LinearLayout>
+       
+       
+       <RadioGroup 
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:checkedButton="@+defensa/defensa1"
+           android:id="@+defensa/ndefensa">
+         	
+           <RadioButton 
+               android:text="1º"
+               android:layout_width="0px"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:id="@+defensa/defensa1"
+               />
+            <RadioButton 
+               android:text="2º"
+               android:layout_width="0px"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:id="@+defensa/defensa2"
+               />
+            <RadioButton 
+               android:text="3º"
+               android:layout_width="0px"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:id="@+defensa/defensa3"
+               />           
+            
+            <RadioButton 
+               android:text="4º"
+               android:layout_width="0px"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:id="@+defensa/defensa4"
+               />
+            
+             <RadioButton 
+               android:text="5º+"
+               android:layout_width="0px"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:id="@+defensa/defensa5"
+               />
+       </RadioGroup>
+       
+       
+    </LinearLayout>
+
+    
+</LinearLayout>

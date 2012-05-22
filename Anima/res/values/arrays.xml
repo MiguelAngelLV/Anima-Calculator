@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="ta">
+        <item >AT 0</item>
+        <item >AT 1</item>
+        <item >AT 2</item>
+        <item >AT 3</item>
+        <item >AT 4</item>
+        <item >AT 5</item>
+        <item >AT 6</item>
+        <item >AT 7</item>
+        <item >AT 8</item>
+        <item >AT 9</item>
+        <item >AT 10</item>
+        <item >AT 11</item>
+        <item >AT 12</item>     
+    </string-array>
+    
+    
+    <string-array name="ataqueValores">
+			<item>30</item>
+			<item>10</item>
+			<item>-10</item>
+			<item>-30</item>
+			<item>-30</item>
+			<item>-100</item>
+			<item>20</item>
+			<item>-30</item>
+			<item>-20</item>
+			<item>-80</item>
+			<item>-200</item>
+			<item>-20</item>
+			<item>-20</item>
+			<item>10</item>
+			<item>15</item>
+			<item>10</item>
+			<item>-25</item>
+			<item>-40</item>
+			<item>-10</item>
+			<item>-20</item>
+			<item>-60</item>
+			<item>-40</item>
+			<item>-80</item>
+			<item>-30</item>
+    </string-array>
+    
+    <string-array name="defensaValores">
+        <item>-30</item>
+		<item>-30</item>
+		<item>-80</item>
+		<item>-90</item>
+		<item>-30</item>
+		<item>-15</item>
+		<item>-80</item>
+		<item>-30</item>
+		<item>-20</item>
+		<item>-40</item>
+		<item>-80</item>
+		<item>-200</item>
+		<item>-120</item>
+		<item>-30</item>
+		<item>-50</item>
+		<item>60</item>
+		<item>100</item>
+		<item>-20</item>
+		<item>-40</item>
+		<item>10</item>
+		<item>10</item>
+		<item>20</item>
+		<item>-10</item>
+		<item>-20</item>
+		<item>-25</item>
+		<item>-40</item>
+		<item>-10</item>
+		<item>-60</item>
+		<item>-40</item>
+		<item>-80</item>
+		<item>10</item>
+		<item>30</item>
+		<item>-80</item>
+		<item>-20</item>
+		<item>-30</item>
+		<item>-30</item>
+		<item>-50</item>
+		<item>-80</item>
+		<item>-120</item>
+		<item>-120</item>
+		<item>-80</item>
+    </string-array>
+    
+	<string-array name="modificadoresAtaque">
+	    <item>Total Offensive</item>
+		<item>Offensive</item>
+		<item>Flank</item>
+		<item>From Behind</item>
+		<item>Vision Partially Obscured</item>
+		<item>Vision Totally Obscured</item>
+		<item>Higher Ground</item>
+		<item>From Ground</item>
+		<item>Partially Immobilized</item>
+		<item>Mostly Immbilized</item>
+		<item>Fully Immobilized</item>
+		<item>Put at Weapon\'s Point</item>
+		<item>Leviating</item>
+		<item>Flight Type 7-14</item>
+		<item>Flight Type 15</item>
+		<item>Charging</item>
+		<item>Drawing Weapon</item>
+		<item>Crowded Space</item>
+		<item>Small Adversary</item>
+		<item>Tiny Adversary</item>
+		<item>Fear</item>
+		<item>Pain</item>
+		<item>Extreme Pain</item>
+		<item>Deffensive</item>
+	</string-array>
+	
+	<string-array name="modificadoresDefensa">
+	    <item>Offensive</item>
+		<item>Flaked</item>
+		<item>From Behind</item>
+		<item>Surprised</item>
+		<item>Vision Partially O. (B)</item>
+		<item>Vision Partially O. (D)</item>
+		<item>Vision Totally O.</item>
+		<item>From Ground</item>
+		<item>Partially Inmmobilized (B)</item>
+		<item>Partially Inmmobilized (D)</item>
+		<item>Mostly Inmobilized</item>
+		<item>Fully Inmobilized</item>
+		<item>Put a Weapon\'s Point</item>
+		<item>Basic Seraphite</item>
+		<item>Arcane Seraphite</item>
+		<item>Basic Shephon</item>
+		<item>Arcane Shephon</item>
+		<item>Levitating (B)</item>
+		<item>Levitating (D)</item>
+		<item>Flight 7-14</item>
+		<item>Flight 15 (B)</item>
+		<item>Flight 15 (D)</item>
+		<item>Charging (B)</item>
+		<item>Charging (D)</item>
+		<item>Drawing Weapon</item>
+		<item>Crowded Space</item>
+		<item>Tiny Adversary (B)</item>
+		<item>Fear</item>
+		<item>Pain</item>
+		<item>Extreme Pain</item>
+		<item>Deffensive</item>
+		<item>Total Defense</item>
+		<item>Fire Projectiles (B)</item>
+		<item>Fire Projectiles (B.P.)</item>
+		<item>Fire Projectiles With Shield</item>
+		<item>Fire Projectiles (D)</item>
+		<item>Thrown Projectile (B)</item>
+		<item>Aguantar Golpe</item>
+		<item>Energy Attack (B)</item>
+		<item>Area Attacks (B)</item>
+		<item>Area Attacks (D)</item>    
+	</string-array>
+    
+</resources>

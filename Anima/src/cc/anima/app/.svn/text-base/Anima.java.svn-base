@@ -1,0 +1,113 @@
+/*******************************************************************************
+ * Copyright 2011 Miguel Ángel López Vicente 
+ *  
+ *    This program is free software: you can redistribute it and/or modify
+ *    it under the terms of the GNU General Public License as published by
+ *    the Free Software Foundation, either version 3 of the License, or
+ *    (at your option) any later version.
+ *  
+ *    This program is distributed in the hope that it will be useful,
+ *    but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *    GNU General Public License for more details.
+ *  
+ *    You should have received a copy of the GNU General Public License
+ *    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ ******************************************************************************/
+package cc.anima.app;
+
+
+import cc.anima.ui.R;
+import android.content.res.Resources;
+
+public class Anima {
+	
+	private int modAtaque;
+	private int modDefensa;
+
+	private int ataque;
+	private int defensa;
+	
+	private int danio;
+	private int ta;
+	
+	private Resources res;
+	
+	public Anima(Resources res){
+		ataque = 0;
+		modAtaque = 0;
+		modDefensa = 0;
+		defensa = 0;
+		danio = 100;
+		ta = 0;
+		this.res = res;
+	}
+
+	public void setAtaque(int ataque){
+		this.ataque = ataque;
+	}
+	
+	public void setDefensa(int defensa){
+		this.defensa = defensa;
+	}
+	
+	
+	
+	public void setModificadorAtaque(int modificador) {
+		modAtaque += modificador;
+	}
+	
+	public void setModificadorDefensa(int modificador) {
+		modDefensa += modificador;
+	}
+
+	public int getAtaqueTotal() {
+		return Math.max(modAtaque + ataque, 0);
+	}
+	
+	public int getDefensaTotal(){
+		if (defensa >= 0)
+			return Math.max(modDefensa + defensa, 0);
+		else
+			return modDefensa + defensa;
+	}
+	
+	public String getResultado() {
+		int total = getAtaqueTotal() - getDefensaTotal();
+		
+		if (total == 0)
+			return res.getString(R.string.ceronada);
+		
+		if (total < 0)
+			return String.format(res.getString(R.string.contraataque), (-total/10)*5);
+		
+		int abs = total - (20 + ta*10); 
+		int p = (abs/10)*10;
+		if (p > 0)
+			return String.format(res.getString(R.string.totaldanio), p, '%',(int)Math.ceil((p*danio)/100f));
+		else
+			return res.getString(R.string.defensiva);
+	}
+	
+	public void setTA(int ta) {
+		if (ta > 0)
+			this.ta = ta;
+		else
+			this.ta = 0;
+	}
+	
+	public void setDanio(int danio) {
+		if (danio > 0)
+			this.danio = danio;
+		else
+			this.danio = 0;
+	}
+	
+	public int getTA(){
+		return ta;
+	}
+	
+	public int getDanio(){
+		return danio;
+	}
+}

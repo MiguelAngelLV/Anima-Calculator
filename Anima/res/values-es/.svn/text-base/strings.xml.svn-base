@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2011 Miguel Ángel López Vicente 
+   
+     This program is free software: you can redistribute it and/or modify
+     it under the terms of the GNU General Public License as published by
+     the Free Software Foundation, either version 3 of the License, or
+     (at your option) any later version.
+   
+     This program is distributed in the hope that it will be useful,
+     but WITHOUT ANY WARRANTY; without even the implied warranty of
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+     GNU General Public License for more details.
+   
+     You should have received a copy of the GNU General Public License
+     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<resources>
+    
+<string name="app_name">Anima Calculator</string>
+<string name="totaldanio">%1$d%2$c del daño \n Total: %3$d</string>
+<string name="contraataque">Contraataque con +%1$d</string>
+<string name="ataque">Ataque</string>
+<string name="ta">TA</string>
+<string name="defensa">Defensa</string>
+<string name="danio">Daño</string>
+<string name="defensiva">A la defensiva</string>
+<string name="ceronada">Cero. No pasa nada.</string>
+<string name="calcular">Calcular</string>
+<string name="modificadores">Modificadores</string>
+<string name="abierta">Abiertas</string>
+<string name="pifia">Pífias</string>
+<string name="capicua">Capicúa</string>
+<string name="lanzar">Lanzar</string>
+<string name="usar">Usar</string>
+<string name="log">Log:</string>
+<string name="tirada">La tirada es de %1$d</string>
+<string name="tirada_abierta">Ha salido abierta</string>
+<string name="tirada_pifia">Ha salido pífia.</string>
+<string name="pifia_1">El nivel de pífia ha sido %1$d (%1$d + 15)</string>
+<string name="pifia_2">El nivel de pífia ha sido %1$d</string>
+<string name="pifia_3">El nivel de pífia ha sido %1$d (%1$d - 15)</string>
+
+<string name="tirada_capicua">Ha salido capicúa</string>
+<string name="tirada_capicua_si">Ha vuelto a salir capicúa %1$d -> %2$d. Se cambia a 100</string>
+<string name="tirada_capicua_no">No ha vuelto a salir capicúa %1$d -> %2$d</string>
+<string name="resultado">El resultado total es: %1$d</string>
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <declare-styleable name="DialogMultiChoice">
+ 		 <attr name="android:entries" />
+ 		 <attr name="android:title" />
+ 		 <attr name="android:entryValues" />
+	</declare-styleable>
+    
+    
+    <style name="Tema" parent="@android:style/Theme.Black.NoTitleBar">
+        
+        
+    </style>
+    
+</resources>
