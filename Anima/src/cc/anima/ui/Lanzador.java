@@ -18,16 +18,14 @@ package cc.anima.ui;
 
 import android.app.AlertDialog;
 import android.content.Context;
-import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup.LayoutParams;
-import android.view.WindowManager;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import cc.anima.app.Tirada;
 
-public class Lanzador extends AlertDialog{
+public class Lanzador {
 		
 	private TextView log;
 	private Tirada tirada;
@@ -41,46 +39,51 @@ public class Lanzador extends AlertDialog{
 	private EditText campo;
 	private TextView resultado;
 	
+	private AlertDialog dialog;
+	
 
 	
 	public Lanzador(EditText campo, Context context) {
-		super(context);
 		this.campo = campo;
 		tirada = new Tirada(context.getResources());
+				
+		LayoutInflater layout = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		
+		View view = layout.inflate(R.layout.lanzador, null);
 
-		
-	}
 	
-	public void onCreate(Bundle save) {
-		super.onCreate(save);
-		setContentView(R.layout.lanzador);
+		log			= (TextView) view.findViewById(R.lanzador.log);
+		pifia 		= (TextView) view.findViewById(R.lanzador.pifia);
+		abierta		= (TextView) view.findViewById(R.lanzador.abierta);
 		
-		log			= (TextView) findViewById(R.lanzador.log);
-		pifia 		= (TextView) findViewById(R.lanzador.pifia);
-		abierta		= (TextView) findViewById(R.lanzador.abierta);
+		pifias 		= (CheckBox) view.findViewById(R.lanzador.pifias);
+		abiertas	= (CheckBox) view.findViewById(R.lanzador.abiertas);
+		capicuas	= (CheckBox) view.findViewById(R.lanzador.capicuas);
 		
-		pifias 		= (CheckBox) findViewById(R.lanzador.pifias);
-		abiertas	= (CheckBox) findViewById(R.lanzador.abiertas);
-		capicuas	= (CheckBox) findViewById(R.lanzador.capicuas);
-		
-		resultado	= (TextView) findViewById(R.lanzador.resultado);
-		
-		findViewById(R.lanzador.usar).setOnClickListener(usar);
-		findViewById(R.lanzador.lanzar).setOnClickListener(lanzar);
-		
+		resultado	= (TextView) view.findViewById(R.lanzador.resultado);
+			
 		
 		pifia.setText("3");
 		abierta.setText("90");
+	
+		AlertDialog.Builder builder = new AlertDialog.Builder(context);
+		builder.setView(view);
+		builder.setNeutralButton(R.string.usar, null);
+		builder.setPositiveButton(R.string.lanzar, null);
+		
+		dialog = builder.create();
+		
 		
 	}
 	
 	public void show() {
-		super.show();
 		tirada.lanzar();
 		log.setText(tirada.getLog());
 		resultado.setText(""+tirada.getResultado());
-		getWindow().setLayout(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT);
-
+		
+		dialog.show();
+		dialog.findViewById(android.R.id.button2).setOnClickListener(usar);
+		dialog.findViewById(android.R.id.button1).setOnClickListener(lanzar);
 	}
 		 
 	
@@ -89,7 +92,7 @@ public class Lanzador extends AlertDialog{
 		@Override
 		public void onClick(View v) {
 			campo.setText(resultado.getText());
-			dismiss();
+			dialog.dismiss();
 		}
 	};
 	

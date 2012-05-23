@@ -17,7 +17,6 @@
 package cc.anima.ui;
 
 import android.app.Activity;
-import android.app.Dialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -40,6 +39,9 @@ public class Principal extends Activity {
 	private TextView resultado;
 	private TextView totalAtaque;
 	private TextView totalDefensa;
+	
+	private Lanzador lanzadorAtaque;
+	private Lanzador lanzadorDefensa;
 	
 
 	@Override
@@ -65,25 +67,25 @@ public class Principal extends Activity {
         ((DialogMultiChoice) findViewById(R.ataque.modificadores)).setOnMultiChoceChange(modificadores);
         ((DialogMultiChoice) findViewById(R.defensa.modificadores)).setOnMultiChoceChange(modificadores);
         
+        lanzadorAtaque 	= new  Lanzador((EditText) findViewById(R.ataque.tirada), this);
+        lanzadorDefensa = new Lanzador((EditText) findViewById(R.defensa.tirada), this);
         
 	}
 	
 	
 	
 	public void lanzar(View v) {		
-		showDialog(v.getId());
-	}
-	
-	public Dialog onCreateDialog(int id) {
-		switch (id) {
+		switch (v.getId()) {
 		case R.ataque.lanzar:
-			return new Lanzador((EditText) findViewById(R.ataque.tirada), this);
+			lanzadorAtaque.show();
+			break;
 		case R.defensa.lanzar:
-			return new Lanzador((EditText) findViewById(R.defensa.tirada), this);
+			lanzadorDefensa.show();
+			break;
 		}
 		
-		return super.onCreateDialog(id);
 	}
+	
 
 
 
