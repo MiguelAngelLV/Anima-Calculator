@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Tema" parent="@android:style/Theme.Holo.NoActionBar">
+    </style>
+    
+    <color name="checkbox">@android:color/white</color>
+    
+</resources>

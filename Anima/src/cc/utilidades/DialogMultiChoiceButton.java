@@ -7,7 +7,6 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.res.TypedArray;
-import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -94,7 +93,7 @@ public class DialogMultiChoiceButton extends Button implements DialogMultiChoice
 
 			if (cb == null) {
 				cb = new CheckBox(getContext());
-				cb.setTextColor(Color.BLACK);
+				cb.setTextColor(getContext().getResources().getColor(R.color.checkbox));
 				cb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {					
 					@Override
 					public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {

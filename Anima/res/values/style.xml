@@ -12,4 +12,6 @@
         
     </style>
     
+    <color name="checkbox">@android:color/black</color>
+    
 </resources>
