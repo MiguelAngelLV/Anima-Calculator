@@ -17,7 +17,12 @@
 package cc.anima.ui;
 
 import android.app.Activity;
+import android.content.SharedPreferences.Editor;
+import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -47,9 +52,23 @@ public class Principal extends Activity {
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        anima = new Anima(getResources());   
         setContentView(R.layout.main);
-        
+        inicializar();
+	}
+	
+	public void onStart() {
+		super.onStart();
+		
+		int orientacion = getSharedPreferences("Anima", MODE_PRIVATE).getInt("orientacion", ActivityInfo.SCREEN_ORIENTATION_NOSENSOR);		
+		setRequestedOrientation(orientacion);
+
+	}
+	
+	
+	
+	private void inicializar() {
+		anima = new Anima(getResources());   
+
         int ids[] = { R.ataque.ataque, R.ataque.danio, R.ataque.tirada,
         			  R.defensa.defensa, R.defensa.tirada};
         
@@ -69,9 +88,7 @@ public class Principal extends Activity {
         
         lanzadorAtaque 	= new  Lanzador((EditText) findViewById(R.ataque.tirada), this);
         lanzadorDefensa = new Lanzador((EditText) findViewById(R.defensa.tirada), this);
-        
 	}
-	
 	
 	
 	public void lanzar(View v) {		
@@ -87,6 +104,12 @@ public class Principal extends Activity {
 	}
 	
 
+	public void onConfigurationChanged(Configuration newConfig) {
+		super.onConfigurationChanged(newConfig);
+		setContentView(R.layout.main);
+		inicializar();
+		
+	}
 
 
 	private OnChangeEval evaluar = new OnChangeEval() {
@@ -194,7 +217,28 @@ public class Principal extends Activity {
 	
 	
 
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.menu, menu);	
+	    return true;
+	}
 	
+	
+	public boolean onOptionsItemSelected(MenuItem item) {
+		Editor editor = getSharedPreferences("Anima", MODE_PRIVATE).edit();
+		
+		if (getRequestedOrientation() == ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE) {
+			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+			editor.putInt("orientacion", ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+		}else {
+			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+			editor.putInt("orientacion", ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+		}
+		
+		editor.commit();
+		
+		return true;
+	
+	}
 
 	
 	

@@ -9,7 +9,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.EditText;
 
-public class EditTextEval extends EditText implements TextWatcher  {
+public class EditTextEval extends EditText   {
 
 	private int actual;
 	private OnChangeEval onchange;
@@ -17,11 +17,11 @@ public class EditTextEval extends EditText implements TextWatcher  {
 	
 	public EditTextEval(Context context, AttributeSet attrs) {
 		super(context, attrs);
-		setText("0");
-		addTextChangedListener(this);
-		setInputType(InputType.TYPE_NUMBER_FLAG_SIGNED);
+		setText("");
+		setOnLongClickListener(borrar);
+		addTextChangedListener(textWatcher);
+		setInputType(InputType.TYPE_CLASS_PHONE);
 		setKeyListener(DigitsKeyListener.getInstance("0123456789+-"));
-
 	   
 	}
 	
@@ -37,26 +37,38 @@ public class EditTextEval extends EditText implements TextWatcher  {
 		
 	}
 
-
-	@Override
-	public void afterTextChanged(Editable s) {
-		int valor = Eval.string(s.toString());
-		if (valor != actual && onchange != null)
-			onchange.onChangeValue(this, valor);
+	
+	
+	private OnLongClickListener borrar = new OnLongClickListener() {
 		
-		actual = valor;
-	}
-
-	@Override
-	public void beforeTextChanged(CharSequence s, int start, int count,int after) {
-		
+		@Override
+		public boolean onLongClick(View v) {
+			setText("");
+			return true;
+		}
 	};
+	
+	private TextWatcher textWatcher = new TextWatcher() {
 
-
-	@Override
-	public void onTextChanged(CharSequence s, int start, int before, int count) {
-		// TODO Auto-generated method stub
-		
-	}
+		@Override
+		public void afterTextChanged(Editable s) {
+			int valor = Eval.string(s.toString());
+			if (valor != actual && onchange != null)
+				onchange.onChangeValue(EditTextEval.this, valor);
+			
+			actual = valor;
+		}
+	
+		@Override
+		public void beforeTextChanged(CharSequence s, int start, int count,int after) {
+			
+		};
+	
+	
+		@Override
+		public void onTextChanged(CharSequence s, int start, int before, int count) {
+			
+		}
+	};
 	
 }

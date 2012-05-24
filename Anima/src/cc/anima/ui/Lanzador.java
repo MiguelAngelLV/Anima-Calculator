@@ -18,12 +18,14 @@ package cc.anima.ui;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import cc.anima.app.Tirada;
+import cc.utilidades.DeviceInfo;
 
 public class Lanzador {
 		
@@ -47,10 +49,14 @@ public class Lanzador {
 		this.campo = campo;
 		tirada = new Tirada(context.getResources());
 				
+		View view;
 		LayoutInflater layout = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		
-		View view = layout.inflate(R.layout.lanzador, null);
 
+		if (DeviceInfo.EINK_SCREEN)
+			view = layout.inflate(R.layout.lanzadoreink, null);
+		else
+			view = layout.inflate(R.layout.lanzador, null);
+		
 	
 		log			= (TextView) view.findViewById(R.lanzador.log);
 		pifia 		= (TextView) view.findViewById(R.lanzador.pifia);
@@ -68,7 +74,7 @@ public class Lanzador {
 	
 		AlertDialog.Builder builder = new AlertDialog.Builder(context);
 		builder.setView(view);
-		builder.setNeutralButton(R.string.usar, null);
+		builder.setNeutralButton(R.string.usar, usar);
 		builder.setPositiveButton(R.string.lanzar, null);
 		
 		dialog = builder.create();
@@ -82,17 +88,15 @@ public class Lanzador {
 		resultado.setText(""+tirada.getResultado());
 		
 		dialog.show();
-		dialog.findViewById(android.R.id.button2).setOnClickListener(usar);
 		dialog.findViewById(android.R.id.button1).setOnClickListener(lanzar);
 	}
 		 
 	
-	private View.OnClickListener usar = new View.OnClickListener() {
+	private DialogInterface.OnClickListener usar = new DialogInterface.OnClickListener() {
 		
 		@Override
-		public void onClick(View v) {
+		public void onClick(DialogInterface dialog, int boton) {
 			campo.setText(resultado.getText());
-			dialog.dismiss();
 		}
 	};
 	

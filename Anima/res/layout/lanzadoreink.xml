@@ -20,7 +20,8 @@
   	android:baselineAligned="false"
  	android:orientation="vertical"
  	android:layout_width="fill_parent"
-	android:layout_height="fill_parent">
+	android:layout_height="fill_parent"
+	android:padding="10dp">
 
 	<LinearLayout
 		android:orientation="vertical"
@@ -35,7 +36,9 @@
 			android:textSize="30dp"
 			android:textStyle="bold"
 			android:layout_margin="10dp"
-			android:id="@+lanzador/resultado"/>	   						
+			android:id="@+lanzador/resultado"
+			android:textColor="@android:color/black"
+			/>	   						
  	</LinearLayout>
  	
  	<LinearLayout
@@ -49,6 +52,7 @@
  			android:layout_weight="2"
  			android:layout_width="0px"
  			android:layout_height="wrap_content"
+ 			android:textColor="@android:color/black"
  			/>
  		
  		<cc.utilidades.EditTextEval
@@ -71,7 +75,9 @@
  			android:id="@+lanzador/pifias"
  			android:layout_weight="2"
  			android:layout_width="0px"
- 			android:layout_height="wrap_content"/>
+ 			android:layout_height="wrap_content"
+			android:textColor="@android:color/black"
+ 			/>
  		
  		<cc.utilidades.EditTextEval
  			android:gravity="right"
@@ -88,7 +94,9 @@
 		android:layout_height="wrap_content"
 		android:checked="true"
 		android:text="@string/capicua"
-		android:id="@+lanzador/capicuas"/>	
+		android:id="@+lanzador/capicuas"
+		android:textColor="@android:color/black"
+		/>	
  		
  
  	<LinearLayout
@@ -102,7 +110,8 @@
 			android:textSize="20dp"
 			android:textStyle="bold"
 			android:layout_margin="5dp"
-			android:text="@string/log" />
+			android:text="@string/log"
+			android:textColor="@android:color/black"/>
 			
 		<ScrollView
 			android:layout_width="fill_parent"
@@ -114,7 +123,8 @@
 				android:textSize="15dp"
 				android:textStyle="bold"
 				android:layout_margin="5dp"
-				android:id="@+lanzador/log"/>
+				android:id="@+lanzador/log"
+				android:textColor="@android:color/black"/>
 			
 		</ScrollView>	
  	</LinearLayout>

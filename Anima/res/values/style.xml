@@ -10,7 +10,6 @@
     
     <style name="Tema" parent="@android:style/Theme.Black.NoTitleBar">
         
-        
     </style>
     
 </resources>
