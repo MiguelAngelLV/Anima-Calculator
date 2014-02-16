@@ -1,0 +1,92 @@
+<resources>
+    <string-array name="ta">
+        <item>"TA 0"</item>
+        <item>"TA 1"</item>
+        <item>"TA 2"</item>
+        <item>"TA 3"</item>
+        <item>"TA 4"</item>
+        <item>"TA 5"</item>
+        <item>"TA 6"</item>
+        <item>"TA 7"</item>
+        <item>"TA 8"</item>
+        <item>"TA 9"</item>
+        <item>"TA 10"</item>
+        <item>"TA 11"</item>
+        <item>"TA 12"</item>     
+    </string-array>
+    
+    
+    <string-array name="modificadoresDefensa">
+        <item>"A l'Ofensiva"</item>
+		<item>"Flanc"</item>
+		<item>"Esquena"</item>
+		<item>"Sorpresa"</item>
+		<item>"Ceguesa parcial (P)"</item>
+		<item>"Ceguesa parcial (I)"</item>
+		<item>"Ceguesa absoluta"</item>
+		<item>"Enderrocat"</item>
+		<item>"Paralisis Menor (P)"</item>
+		<item>"Paralisis Menor (E)"</item>
+		<item>"Paralisis Parcial"</item>
+		<item>"Paralisis Completa"</item>
+		<item>"Amenaçat"</item>
+		<item>"Seraphite Base"</item>
+		<item>"Seraphite Arcà"</item>
+		<item>"Shephon Base"</item>
+		<item>"Shephon Arcà"</item>
+		<item>"Levitant (P)"</item>
+		<item>"Levitant (E)"</item>
+		<item>"Vol 7-14"</item>
+		<item>"Vol 15 (P)"</item>
+		<item>"Vol 15 (E)"</item>
+		<item>"Carregant (P)"</item>
+		<item>"Carregant (E)"</item>
+		<item>"Desenfundar"</item>
+		<item>"Espai Reduït"</item>
+		<item>"Adversari Diminut (P)"</item>
+		<item>"Por"</item>
+		<item>"Dolor"</item>
+		<item>"Dolor Extrem"</item>
+		<item>"A la Defensiva"</item>
+		<item>"Defensa Total"</item>
+		<item>"Projectils disparats (P)"</item>
+		<item>"Projectils disparats (MP)"</item>
+		<item>"Projectils disparats Escut"</item>
+		<item>"Projectils disparats (E)"</item>
+		<item>"Projectils Llançats (P)"</item>
+		<item>"Aguantar Cop"</item>
+		<item>"Atac Intangible (P)"</item>
+		<item>"Atac a Àrea (P)"</item>
+		<item>"Atac a Àrea (E)"</item>
+    </string-array>
+    
+    
+    <string-array name="modificadoresAtaque">
+        <item>"Atac Total"</item>
+		<item>"A l'Ofensiva"</item>
+		<item>"Flanc"</item>
+		<item>"Esquena"</item>
+		<item>"Ceguesa Parcial"</item>
+		<item>"Ceguesa absoluta"</item>
+		<item>"Posició Superior"</item>
+		<item>"Enderrocat"</item>
+		<item>"Paralisis Menor"</item>
+		<item>"Paralisis Parcial"</item>
+		<item>"Paralisis Completa"</item>
+		<item>"Amenaçat"</item>
+		<item>"Levitant"</item>
+		<item>"Vol 7-14"</item>
+		<item>"Vol 15"</item>
+		<item>"Carregant"</item>
+		<item>"Desenfundar"</item>
+		<item>"Espai Reduït"</item>
+		<item>"Adversari Petit"</item>
+		<item>"Adversari Diminut"</item>
+		<item>"Por"</item>
+		<item>"Dolor"</item>
+		<item>"Dolor Extrem"</item>
+		<item>"A la Defensiva"</item>
+    </string-array>
+    
+    
+</resources>

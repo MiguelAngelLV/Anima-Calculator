@@ -1,0 +1,54 @@
+<!--
+  Copyright 2011 Miguel Ángel López Vicente 
+   
+     This program is free software: you can redistribute it and/or modify
+     it under the terms of the GNU General Public License as published by
+     the Free Software Foundation, either version 3 of the License, or
+     (at your option) any later version.
+   
+     This program is distributed in the hope that it will be useful,
+     but WITHOUT ANY WARRANTY; without even the implied warranty of
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+     GNU General Public License for more details.
+   
+     You should have received a copy of the GNU General Public License
+     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+--><resources>
+    
+<string name="app_name">"Anima Calculator"</string>
+<string name="totaldanio">"%1$d %2$c del dany \ n Total: %3$d"</string>
+<string name="contraataque">"Contraatac amb + %1$d"</string>
+<string name="ataque">"Atac"</string>
+<string name="ta">"TA"</string>
+<string name="defensa">"Defensa"</string>
+<string name="danio">"Dany"</string>
+<string name="defensiva">"A la defensiva"</string>
+<string name="ceronada">"Zero. No passa res."</string>
+<string name="calcular">"Calcular"</string>
+<string name="modificadores">"Modificadors"</string>
+<string name="abierta">"Obertes"</string>
+<string name="pifia">"Pífies"</string>
+<string name="capicua">"Capicua"</string>
+<string name="lanzar">"Llançar"</string>
+<string name="usar">"Utilitza"</string>
+<string name="log">"Log:"</string>
+<string name="tirada">"Tirada"</string>
+<string name="tirada_resultado">"El tiratge és de %1$d"</string>
+<string name="tirada_abierta">"Ha sortit oberta"</string>
+<string name="tirada_pifia">"Ha sortit pífia."</string>
+<string name="pifia_1">"El nivell de pífia ha estat %1$d ( %1$d + 15)"</string>
+<string name="pifia_2">"El nivell de pífia ha estat %1$d"</string>
+<string name="pifia_3">"El nivell de pífia ha estat %1$d ( %1$d - 15)"</string>
+
+<string name="tirada_capicua">"Ha sortit capicua"</string>
+<string name="tirada_capicua_si">"Ha tornat a sortir capicua %1$d -&gt; %2$d . Es canvia a 100"</string>
+<string name="tirada_capicua_no">"No ha tornat a sortir capicua %1$d -&gt; %2$d"</string>
+<string name="resultado">"El resultat total és: %1$d"</string>
+
+<string name="bono">"Bono:"</string>
+<string name="ninguno">"Cap"</string>
+
+<string name="modificadoresAtaque">"Modificadors d'Atac"</string>
+<string name="modificadoresDefensa">"Modificadors de Defensa"</string>
+
+</resources>
