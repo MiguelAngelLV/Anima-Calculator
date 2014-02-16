@@ -18,6 +18,8 @@ package cc.anima.app;
 
 import java.util.Random;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import cc.anima.ui.R;
 
@@ -33,35 +35,45 @@ public class Tirada {
 	}
 
 
-	public boolean isCapicua() {
-		return capicua;
+	public boolean isCapicuas() {
+		return capicuas;
 	}
 
 
 	private int pifia;
+	private boolean pifias;
+	private boolean abiertas;
 	private int abierta;
 	private int resultado;
-	private boolean capicua;
+	private boolean capicuas;
 		
 	private String log;
-	private Resources res;
+	private Context context;
 	
 	
-	public Tirada(Resources res) {
-		pifia = 3;
-		abierta = 90;
-		capicua = true;
+	public Tirada(Context context) {
+		SharedPreferences shared = context.getSharedPreferences("Anima", Context.MODE_PRIVATE);
+	
 		log = new String();	
+		this.context = context;
+		pifia = shared.getInt("pifia", 3);
+		abierta = shared.getInt("abierta", 90);
+		pifias = shared.getBoolean("pifias", true);
+		abiertas = shared.getBoolean("abiertas", true);
+		capicuas = shared.getBoolean("capicuas", true);
 		
-		this.res = res;
-
+	
 	}
 
 
 	public void lanzar() {
+		
+		Resources res = context.getResources();
+		
 		Random r = new Random();
 		int valor = r.nextInt(100)+1;
-		if (valor <= pifia) {
+		
+		if (valor <= pifia && pifias) {
 			log = String.format(res.getString(R.string.tirada), valor) + "\n";
 			log += res.getString(R.string.tirada_pifia) + "\n";
 			int pifia = r.nextInt(100)+1;
@@ -81,9 +93,9 @@ public class Tirada {
 			isAbierta = false;
 			log += String.format(res.getString(R.string.tirada_resultado), valor) + "\n";
 			
-			if (capicua && isCapicua(valor)) {
-				log += res.getString(R.string.tirada_capicua) + "\n";
+			if (valor/10 == valor%10 && capicuas) {
 				int c = r.nextInt(10)+1;
+				log += res.getString(R.string.tirada_capicua) + "\n";		
 				if (c == valor%10) {
 					log += String.format(res.getString(R.string.tirada_capicua_si), valor%10, c) + "\n";
 					valor = 100;
@@ -92,7 +104,7 @@ public class Tirada {
 				}
 			}
 			
-			if (valor >= abierta) {
+			if (valor >= abierta && abiertas) {
 				isAbierta = true;
 				log += res.getString(R.string.tirada_abierta) + "\n";
 				if (abierta < 100) abierta++;
@@ -109,12 +121,6 @@ public class Tirada {
 		
 	}
 	
-	
-	private boolean isCapicua(int n) {
-		if (n < 10) return false;
-		
-		return n/10 == n%10;
-	}
 			
 	
 	public String getLog() {
@@ -123,22 +129,60 @@ public class Tirada {
 
 	public void setPifia(int pifia) {
 		this.pifia = pifia;
+		save();
+	}
+	
+	public boolean isPifias() {
+		return pifias;
+	}
+	
+	public boolean isAbiertas() {
+		return abiertas;
+	}
+	
+	public void setAbiertas(boolean abiertas) {
+		this.abiertas = abiertas;
+		save();
+	}
+	
+	public void setPifias(boolean pifias) {
+		this.pifias = pifias;
+		save();
 	}
 
 
 	public void setAbierta(int abierta) {
 		this.abierta = abierta;
+		save();
+
 	}
 
 
-	public void setCapicua(boolean capicua) {
-		this.capicua = capicua;
+	public void setCapicuas(boolean capicuas) {
+		this.capicuas = capicuas;
+		save();
 	}
 
 	
 	public int getResultado() {
 		return resultado;
 	}
+	
+	
+	private void save() {
+		SharedPreferences.Editor editor = context.getSharedPreferences("Anima", Context.MODE_PRIVATE).edit();
+		editor.putInt("pifia", pifia);
+		editor.putInt("abierta", abierta);
+		editor.putBoolean("pifias", pifias);
+		editor.putBoolean("capicuas", capicuas);
+		editor.putBoolean("abiertas", abiertas);
+		editor.commit();
+		
+	}
+
+
+
+
 
 
 

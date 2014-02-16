@@ -26,13 +26,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import cc.anima.app.Tirada;
 import cc.utilidades.DeviceInfo;
+import cc.utilidades.EditTextEval;
 
 public class Lanzador {
 		
 	private TextView log;
 	private Tirada tirada;
-	private TextView pifia;
-	private TextView abierta;
+	private EditTextEval pifia;
+	private EditTextEval abierta;
 	
 	private CheckBox pifias;
 	private CheckBox capicuas;
@@ -47,7 +48,7 @@ public class Lanzador {
 	
 	public Lanzador(EditText campo, Context context) {
 		this.campo = campo;
-		tirada = new Tirada(context.getResources());
+		tirada = new Tirada(context);
 				
 		View view;
 		LayoutInflater layout = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -59,8 +60,8 @@ public class Lanzador {
 		
 	
 		log			= (TextView) view.findViewById(R.lanzador.log);
-		pifia 		= (TextView) view.findViewById(R.lanzador.pifia);
-		abierta		= (TextView) view.findViewById(R.lanzador.abierta);
+		pifia 		= (EditTextEval) view.findViewById(R.lanzador.pifia);
+		abierta		= (EditTextEval) view.findViewById(R.lanzador.abierta);
 		
 		pifias 		= (CheckBox) view.findViewById(R.lanzador.pifias);
 		abiertas	= (CheckBox) view.findViewById(R.lanzador.abiertas);
@@ -69,8 +70,12 @@ public class Lanzador {
 		resultado	= (TextView) view.findViewById(R.lanzador.resultado);
 			
 		
-		pifia.setText("3");
-		abierta.setText("90");
+		pifias.setChecked(tirada.isPifias());
+		abiertas.setChecked(tirada.isAbiertas());
+		capicuas.setChecked(tirada.isCapicuas());
+		
+		pifia.setText(""+tirada.getPifia());
+		abierta.setText(""+tirada.getAbierta());
 	
 		AlertDialog.Builder builder = new AlertDialog.Builder(context);
 		builder.setView(view);
@@ -105,19 +110,12 @@ public class Lanzador {
 		@Override
 		public void onClick(View v) {
 			
-			if (abiertas.isChecked())
-				tirada.setAbierta(Integer.parseInt(abierta.getText().toString()));
-			else
-				tirada.setAbierta(101);
+			tirada.setPifia(pifia.getValue());
+			tirada.setAbierta(abierta.getValue());
+			tirada.setPifias(pifias.isChecked());
+			tirada.setAbiertas(abiertas.isChecked());
+			tirada.setCapicuas(capicuas.isChecked());
 
-			
-			if (pifias.isChecked())
-				tirada.setPifia(Integer.parseInt(pifia.getText().toString()));
-			else
-				tirada.setPifia(-1);
-			
-			tirada.setCapicua(capicuas.isChecked());
-			
 			tirada.lanzar();
 			log.setText(tirada.getLog());
 			resultado.setText(""+tirada.getResultado());

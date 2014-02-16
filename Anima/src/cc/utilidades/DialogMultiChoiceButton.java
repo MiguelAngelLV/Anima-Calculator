@@ -73,6 +73,7 @@ public class DialogMultiChoiceButton extends Button implements DialogMultiChoice
 	                			onchange.onMultiChoiceChange(DialogMultiChoiceButton.this, i, false, campos[i].valor);
 	                	}
 	                	   
+	                adapter.notifyDataSetChanged();
 	           }});
 		
 		builder.setPositiveButton(android.R.string.ok, null);

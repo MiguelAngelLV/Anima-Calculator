@@ -28,9 +28,8 @@
         android:layout_margin="0dp"
         style="@android:style/TextAppearance.Large"
         android:id="@+id/resultado"
-        android:gravity="center_horizontal"
-        android:layout_weight="1"
-        android:padding="10dp"
+        android:gravity="center"
+        android:layout_weight="2"
         />
     
     

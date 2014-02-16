@@ -48,6 +48,11 @@ public class EditTextEval extends EditText   {
 		}
 	};
 	
+	
+	
+	public int getValue() {
+		return Eval.string(getText().toString());
+	}
 	private TextWatcher textWatcher = new TextWatcher() {
 
 		@Override
