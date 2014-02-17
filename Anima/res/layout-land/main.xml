@@ -63,7 +63,7 @@
 			               style="@android:style/TextAppearance.Large"/>
 			           
 			           <TextView 
-			               android:id="@+ataque/total" 
+			               android:id="@+id/ataque_total" 
 			               android:layout_width="0px"
 			               android:layout_height="wrap_content"
 			               android:layout_weight="1"
@@ -89,7 +89,7 @@
 			           	<cc.utilidades.EditTextEval 
 			               android:layout_width="fill_parent"
 			               android:layout_height="wrap_content"
-			               android:id="@+ataque/tirada"
+			               android:id="@+id/ataque_tirada"
 			               />
 			            
 			            <TextView 
@@ -101,7 +101,7 @@
 			            <cc.utilidades.EditTextEval 
 			               android:layout_width="fill_parent"
 			               android:layout_height="wrap_content"
-			               android:id="@+ataque/ataque"
+			               android:id="@+id/ataque"
 			               />	
 		            
 			           <TextView 
@@ -113,13 +113,13 @@
 			           <cc.utilidades.EditTextEval
 			               android:layout_width="fill_parent"
 			               android:layout_height="wrap_content"
-			               android:id="@+ataque/danio"
+			               android:id="@+id/danio"
 			               />
 			           
 			           <ImageButton 
 			             android:layout_width="fill_parent"
 			             android:layout_height="wrap_content"
-			             android:id="@+ataque/lanzar"
+			             android:id="@+id/ataque_lanzar"
 			             android:src="@drawable/roll"
 			             android:onClick="lanzar"
 			              />	       
@@ -128,7 +128,7 @@
 		            <cc.utilidades.DialogMultiChoiceList 
 		          		android:layout_width="0px"
 		          		android:layout_weight="2"
-		          		android:id="@+ataque/modificadores"
+		          		android:id="@+id/ataque_modificadores_list"
 		          		android:layout_height="fill_parent"
 		           		android:text="@string/modificadores" 
 		           		android:entries="@array/modificadoresAtaque"
@@ -165,7 +165,7 @@
 			               style="@android:style/TextAppearance.Large"/>
 			           
 			           <TextView 
-			               android:id="@+defensa/total" 
+			               android:id="@+id/defensa_total" 
 			               android:layout_width="0px"
 			               android:layout_height="wrap_content"
 			               android:layout_weight="1"
@@ -192,7 +192,7 @@
 			           	<cc.utilidades.EditTextEval 
 			               android:layout_width="fill_parent"
 			               android:layout_height="wrap_content"
-			               android:id="@+defensa/tirada"
+			               android:id="@+id/defensa_tirada"
 			               />
 			            
 			            <TextView 
@@ -204,7 +204,7 @@
 			            <cc.utilidades.EditTextEval 
 			               android:layout_width="fill_parent"
 			               android:layout_height="wrap_content"
-			               android:id="@+defensa/defensa"
+			               android:id="@+id/defensa"
 			               />	
 		            
 			           <TextView 
@@ -216,7 +216,7 @@
 			           <Spinner 
 			               android:layout_width="fill_parent"
 			               android:layout_height="wrap_content"
-			               android:id="@+defensa/ta"
+			               android:id="@+id/ta"
 			               android:entries="@array/ta"
 			               android:background="@android:drawable/btn_default"
 			               android:prompt="@string/ta"
@@ -225,7 +225,7 @@
 			           <ImageButton 
 			             android:layout_width="fill_parent"
 			             android:layout_height="wrap_content"
-			             android:id="@+defensa/lanzar"
+			             android:id="@+id/defensa_lanzar"
 			             android:src="@drawable/roll"
 			             android:onClick="lanzar"
 			              />	       
@@ -234,7 +234,7 @@
 		            <cc.utilidades.DialogMultiChoiceList 
 		          		android:layout_width="0px"
 		          		android:layout_weight="2"
-		          		android:id="@+defensa/modificadores"
+		          		android:id="@+id/defensa_modificadores_list"
 		          		android:layout_height="fill_parent"
 		           		android:text="@string/modificadores" 
 		           		android:entries="@array/modificadoresDefensa"
@@ -248,28 +248,28 @@
 		           android:layout_height="wrap_content"
 		           android:orientation="horizontal"
 		           android:checkedButton="@+defensa/defensa1"
-		           android:id="@+defensa/ndefensa">
+		           android:id="@+id/ndefensa">
 		         	
 		           <RadioButton 
 		               android:text="1º"
 		               android:layout_width="0px"
 		               android:layout_height="wrap_content"
 		               android:layout_weight="1"
-		               android:id="@+defensa/defensa1"
+		               android:id="@+id/defensa1"
 		               />
 		            <RadioButton 
 		               android:text="2º"
 		               android:layout_width="0px"
 		               android:layout_height="wrap_content"
 		               android:layout_weight="1"
-		               android:id="@+defensa/defensa2"
+		               android:id="@+id/defensa2"
 		               />
 		            <RadioButton 
 		               android:text="3º"
 		               android:layout_width="0px"
 		               android:layout_height="wrap_content"
 		               android:layout_weight="1"
-		               android:id="@+defensa/defensa3"
+		               android:id="@+id/defensa3"
 		               />           
 		            
 		            <RadioButton 
@@ -277,7 +277,7 @@
 		               android:layout_width="0px"
 		               android:layout_height="wrap_content"
 		               android:layout_weight="1"
-		               android:id="@+defensa/defensa4"
+		               android:id="@+id/defensa4"
 		               />
 		            
 		             <RadioButton 
@@ -285,7 +285,7 @@
 		               android:layout_width="0px"
 		               android:layout_height="wrap_content"
 		               android:layout_weight="1"
-		               android:id="@+defensa/defensa5"
+		               android:id="@+id/defensa5"
 		               />
 		       </RadioGroup>
 	       </LinearLayout> 	       

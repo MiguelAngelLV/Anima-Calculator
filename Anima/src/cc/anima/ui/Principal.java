@@ -51,7 +51,7 @@ public class Principal extends Activity {
 
 	@Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        super.onCreate(null);
         setContentView(R.layout.main);
         inicializar();
 	}
@@ -69,34 +69,44 @@ public class Principal extends Activity {
 	private void inicializar() {
 		anima = new Anima(getResources());   
 
-        int ids[] = { R.ataque.ataque, R.ataque.danio, R.ataque.tirada,
-        			  R.defensa.defensa, R.defensa.tirada};
+        int ids[] = { R.id.ataque, R.id.danio, R.id.ataque_tirada,
+        			  R.id.defensa, R.id.defensa_tirada};
         
         for (int id : ids)
         	((EditTextEval) findViewById(id)).setOnChangeEval(evaluar);
 
 
         resultado = (TextView) findViewById(R.id.resultado);
-        totalAtaque = (TextView) findViewById(R.ataque.total);
-        totalDefensa = (TextView) findViewById(R.defensa.total);
+        totalAtaque = (TextView) findViewById(R.id.ataque_total);
+        totalDefensa = (TextView) findViewById(R.id.defensa_total);
        
         
-        ((Spinner) findViewById(R.defensa.ta)).setOnItemSelectedListener(ta);
-        ((RadioGroup) findViewById(R.defensa.ndefensa)).setOnCheckedChangeListener(defensa);
-        ((DialogMultiChoice) findViewById(R.ataque.modificadores)).setOnMultiChoceChange(modificadores);
-        ((DialogMultiChoice) findViewById(R.defensa.modificadores)).setOnMultiChoceChange(modificadores);
+        ((Spinner) findViewById(R.id.ta)).setOnItemSelectedListener(ta);
+        ((RadioGroup) findViewById(R.id.ndefensa)).setOnCheckedChangeListener(defensa);
         
-        lanzadorAtaque 	= new  Lanzador((EditText) findViewById(R.ataque.tirada), this);
-        lanzadorDefensa = new Lanzador((EditText) findViewById(R.defensa.tirada), this);
+        DialogMultiChoice da = (DialogMultiChoice) findViewById(R.id.ataque_modificadores_button);
+        if (da == null)
+        	da = (DialogMultiChoice) findViewById(R.id.ataque_modificadores_list);
+              
+        da.setOnMultiChoceChange(modificadores);
+        
+        DialogMultiChoice dd = (DialogMultiChoice) findViewById(R.id.defensa_modificadores_button);
+        if (dd == null)
+        	dd = (DialogMultiChoice) findViewById(R.id.defensa_modificadores_list);
+        
+        dd.setOnMultiChoceChange(modificadores);
+        
+        lanzadorAtaque 	= new  Lanzador((EditText) findViewById(R.id.ataque_tirada), this);
+        lanzadorDefensa = new Lanzador((EditText) findViewById(R.id.defensa_tirada), this);
 	}
 	
 	
 	public void lanzar(View v) {		
 		switch (v.getId()) {
-		case R.ataque.lanzar:
+		case R.id.ataque_lanzar:
 			lanzadorAtaque.show();
 			break;
-		case R.defensa.lanzar:
+		case R.id.defensa_lanzar:
 			lanzadorDefensa.show();
 			break;
 		}
@@ -105,7 +115,7 @@ public class Principal extends Activity {
 	
 
 	public void onConfigurationChanged(Configuration newConfig) {
-		super.onConfigurationChanged(newConfig);
+		super.onConfigurationChanged(null);
 		setContentView(R.layout.main);
 		inicializar();
 		
@@ -116,19 +126,19 @@ public class Principal extends Activity {
 		@Override
 		public void onChangeValue(View v, int value) {
 			switch (v.getId()) {
-			case R.ataque.ataque:
+			case R.id.ataque:
 				anima.setAtaque(value);
 				break;
-			case R.ataque.danio:
+			case R.id.danio:
 				anima.setDanio(value);
 				break;
-			case R.ataque.tirada:
+			case R.id.ataque_tirada:
 				anima.setTiradaAtaque(value);
 				break;
-			case R.defensa.defensa:
+			case R.id.defensa:
 				anima.setDefensa(value);
 				break;
-			case R.defensa.tirada:
+			case R.id.defensa_tirada:
 				anima.setTiradaDefensa(value);
 				break;
 			
@@ -145,14 +155,16 @@ public class Principal extends Activity {
 		@Override
 		public void onMultiChoiceChange(View v, int position, boolean select, int value) {
 			switch (v.getId()) {
-			case R.ataque.modificadores:
+			case R.id.ataque_modificadores_button:
+			case R.id.ataque_modificadores_list:
 				if (select)
 					anima.modificarAtaque(value);
 				else 
 					anima.modificarAtaque(-value);
 				break;
 	
-			case R.defensa.modificadores:
+			case R.id.defensa_modificadores_button:
+			case R.id.defensa_modificadores_list:
 				if (select)
 					anima.modificarDefensa(value);
 				else
@@ -192,19 +204,19 @@ public class Principal extends Activity {
 		@Override
 		public void onCheckedChanged(RadioGroup group, int id) {
 			switch (id) {
-			case R.defensa.defensa1:
+			case R.id.defensa1:
 				anima.setNDefensa(1);
 				break;
-			case R.defensa.defensa2:
+			case R.id.defensa2:
 				anima.setNDefensa(2);
 				break;
-			case R.defensa.defensa3:
+			case R.id.defensa3:
 				anima.setNDefensa(3);
 				break;
-			case R.defensa.defensa4:
+			case R.id.defensa4:
 				anima.setNDefensa(4);
 				break;
-			case R.defensa.defensa5:
+			case R.id.defensa5:
 				anima.setNDefensa(5);
 			default:
 				break;

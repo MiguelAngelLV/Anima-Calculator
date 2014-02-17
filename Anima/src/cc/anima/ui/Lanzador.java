@@ -59,15 +59,15 @@ public class Lanzador {
 			view = layout.inflate(R.layout.lanzador, null);
 		
 	
-		log			= (TextView) view.findViewById(R.lanzador.log);
-		pifia 		= (EditTextEval) view.findViewById(R.lanzador.pifia);
-		abierta		= (EditTextEval) view.findViewById(R.lanzador.abierta);
+		log			= (TextView) view.findViewById(R.id.lanzador_log);
+		pifia 		= (EditTextEval) view.findViewById(R.id.lanzador_pifia);
+		abierta		= (EditTextEval) view.findViewById(R.id.lanzador_abierta);
 		
-		pifias 		= (CheckBox) view.findViewById(R.lanzador.pifias);
-		abiertas	= (CheckBox) view.findViewById(R.lanzador.abiertas);
-		capicuas	= (CheckBox) view.findViewById(R.lanzador.capicuas);
+		pifias 		= (CheckBox) view.findViewById(R.id.lanzador_pifias);
+		abiertas	= (CheckBox) view.findViewById(R.id.lanzador_abiertas);
+		capicuas	= (CheckBox) view.findViewById(R.id.lanzador_capicuas);
 		
-		resultado	= (TextView) view.findViewById(R.lanzador.resultado);
+		resultado	= (TextView) view.findViewById(R.id.lanzador_resultado);
 			
 		
 		pifias.setChecked(tirada.isPifias());

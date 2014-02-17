@@ -35,7 +35,7 @@
 			android:textSize="30dp"
 			android:textStyle="bold"
 			android:layout_margin="10dp"
-			android:id="@+lanzador/resultado"/>	   						
+			android:id="@+id/lanzador_resultado"/>	   						
  	</LinearLayout>
  	
  	<LinearLayout
@@ -45,7 +45,7 @@
  		<CheckBox
 			android:checked="true"
  			android:text="@string/abierta" 
- 			android:id="@+lanzador/abiertas"
+ 			android:id="@+id/lanzador_abiertas"
  			android:layout_weight="2"
  			android:layout_width="0px"
  			android:layout_height="wrap_content"
@@ -53,7 +53,7 @@
  		
  		<cc.utilidades.EditTextEval
  			android:gravity="right"
- 			android:id="@+lanzador/abierta"
+ 			android:id="@+id/lanzador_abierta"
  			android:layout_weight="1"
  			android:layout_width="0px"
  			android:layout_height="wrap_content" 
@@ -68,7 +68,7 @@
  		<CheckBox
 			android:checked="true"
  			android:text="@string/pifia" 
- 			android:id="@+lanzador/pifias"
+ 			android:id="@+id/lanzador_pifias"
  			android:layout_weight="2"
  			android:layout_width="0px"
  			android:layout_height="wrap_content"/>
@@ -76,7 +76,7 @@
  		<cc.utilidades.EditTextEval
  			android:gravity="right"
  			android:layout_weight="1"
- 			android:id="@+lanzador/pifia"
+ 			android:id="@+id/lanzador_pifia"
  			android:layout_width="0px"
  			android:layout_height="wrap_content" 
  			/>
@@ -88,7 +88,7 @@
 		android:layout_height="wrap_content"
 		android:checked="true"
 		android:text="@string/capicua"
-		android:id="@+lanzador/capicuas"/>	
+		android:id="@+id/lanzador_capicuas"/>	
  		
  
  	<LinearLayout
@@ -114,7 +114,7 @@
 				android:textSize="15dp"
 				android:textStyle="bold"
 				android:layout_margin="5dp"
-				android:id="@+lanzador/log"/>
+				android:id="@+id/lanzador_log"/>
 			
 		</ScrollView>	
  	</LinearLayout>
